@@ -43,6 +43,7 @@ namespace Lab07_Collections
             }
             if (userResponse == 3)
             {
+                deck.CreateDeck();
                 deck.Add(new Card(CardFace.two, Suit.Clubs));
                 DisplayDeck(deck.CreateDeck());
             }

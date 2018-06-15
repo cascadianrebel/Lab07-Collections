@@ -13,6 +13,7 @@ namespace Lab07_Collections
         public int count = 0;
 
         //TODO: Add Card
+        //Troubleshooting... nothing is being added.
         public void Add(T newCard)
         {
             if (count == cardDeck.Length)
