@@ -21,7 +21,7 @@ namespace Lab07_Collections
         public static void HomeDisplay()
         {
             Console.WriteLine("Please Select an option below");
-            Console.WriteLine("1. Display Deck");
+            Console.WriteLine("1. Deal Cards");
             Console.WriteLine("2. Shuffle Deck");
             Console.WriteLine("3. Add to the Deck");
             Console.WriteLine("4. Remove from the deck");
@@ -34,7 +34,7 @@ namespace Lab07_Collections
             int userResponse = Convert.ToInt32(Console.ReadLine());
             if(userResponse == 1)
             {
-                DisplayDeck(deck.CreateDeck());
+                Deal();
             }
             if (userResponse == 2)
             {
@@ -46,6 +46,16 @@ namespace Lab07_Collections
                 deck.Add(new Card(CardFace.two, Suit.Clubs));
                 DisplayDeck(deck.CreateDeck());
             }
+        }
+        public static void Deal()
+        {
+            //Added by fellow studend to replace Deck<Card> that was throwing errors.
+            //I don't understand why it is needed. 
+            Deck<Card> deck = new Deck<Card>();
+
+            DisplayDeck(deck.CreateDeck());
+            deck.Shuffle();
+            DisplayDeck(deck.CreateDeck());
         }
 
         public static void DisplayDeck(Deck<Card> deck)
